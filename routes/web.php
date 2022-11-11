@@ -27,5 +27,8 @@ Route::post('/register', [RegisterController::class,'register'])->name('register
 Route::get('login',[LoginController::class,'show'])->name('login.show');
 Route::post('/login', [LoginController::class,'login'])->name('login');
 
-Route::get('/home',[HomeController::class,'index']);
+#User Routes
+Route::get('/home/user',[HomeController::class,'user'])->name('user')->middleware('auth');
+
+Route::get('/home',[HomeController::class,'index'])->name('home');
 Route::get('/logout',[LogoutController::class,'logout'])->name('logout');
