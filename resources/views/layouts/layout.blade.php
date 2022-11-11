@@ -29,8 +29,6 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </li>
                     
@@ -43,7 +41,7 @@
                         </li>
                         @if (auth()->user()->role == '1')
                             <li class="nav-item">
-                                <a class="nav-link" href="">Administrar Sitio</a>
+                                <a class="nav-link" href="{{ route('admin') }}">Administrar Sitio</a>
                             </li>
                         @endif
                         <li class="nav-item">

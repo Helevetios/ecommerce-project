@@ -4,6 +4,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,3 +33,10 @@ Route::get('/home/user',[HomeController::class,'user'])->name('user')->middlewar
 
 Route::get('/home',[HomeController::class,'index'])->name('home');
 Route::get('/logout',[LogoutController::class,'logout'])->name('logout');
+
+#Admin Routes
+Route::prefix('admin')->middleware('auth')->group(function(){
+    Route::get('/',[AdminController::class,'index'])->name('admin');
+    Route::get('/categories',[AdminController::class,'categories'])->name('categories');
+    Route::post('/categories/store',[AdminController::class,'categoriesStore'])->name('categories.store');
+});
