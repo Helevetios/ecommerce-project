@@ -1,4 +1,4 @@
-@extends('admin.index')
+@extends('admin.categories.index')
 
 @section('title','Categorias')
 
@@ -24,16 +24,16 @@
                     <td>{{$category->id}}</td>
                     <td>{{$category->name}}</td>
                     <td>
-                        <form action="" method="post">
-                            <button class="btn btn-primary">Editar</button>
-                        </form>
+                        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-update-category-{{$category->id}}">Editar</button>
                     </td>
                     <td>
-                        <form action="" method="post">
-                            <button class="btn btn-danger">Eliminar</button>
+                        <form action="{{ route('categories.delete', [$category->id]) }}" method="post">
+                            @csrf
+                            <button class="btn btn-danger" onclick="return confirm('¿Estas seguro de borrar este elemento?')">Eliminar</button>
                         </form>
                     </td>
                 </tr>
+                @include('admin.categories.modal_update')
                 @endforeach
             </tbody>
         </table>

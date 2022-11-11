@@ -37,6 +37,9 @@ Route::get('/logout',[LogoutController::class,'logout'])->name('logout');
 #Admin Routes
 Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('/',[AdminController::class,'index'])->name('admin');
+    #categories
     Route::get('/categories',[AdminController::class,'categories'])->name('categories');
     Route::post('/categories/store',[AdminController::class,'categoriesStore'])->name('categories.store');
+    Route::post('/categories/update/{categoryId}',[AdminController::class,'categoriesUpdate'])->name('categories.update');
+    Route::post('/categories/delete/{categoryId}',[AdminController::class,'categoriesDelete'])->name('categories.delete');
 });
