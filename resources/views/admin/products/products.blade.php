@@ -34,7 +34,12 @@
                     <td>{{$product->description}}</td>
                     <td>{{$product->price}}</td>
                     <td></td>
-                    <td></td>
+                    <td>
+                        <form action="{{ route('products.delete', [$product->id]) }}" method="post">
+                            @csrf
+                            <button class="btn btn-danger" onclick="return confirm('¿Estas seguro de borrar este elemento?')">Eliminar</button>
+                        </form>                        
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

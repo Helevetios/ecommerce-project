@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -63,6 +64,14 @@ class AdminController extends Controller
         $newProduct->price = $request->price;
         
         $newProduct->save();
+        return redirect()->back();
+    }
+
+    public function productsDelete($productId){
+        $product_delete = Product::find($productId);
+        if(Storage::delete('public/'.$product_delete->image)){
+            Product::destroy($productId);
+        }
         return redirect()->back();
     }
 }

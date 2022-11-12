@@ -45,4 +45,5 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     #products
     Route::get('/products',[AdminController::class,'productsIndex'])->name('products');
     Route::post('/products/store',[AdminController::class,'productsStore'])->name('products.store');
+    Route::post('/products/delete/{productId}',[AdminController::class,'productsDelete'])->name('products.delete');
 });
