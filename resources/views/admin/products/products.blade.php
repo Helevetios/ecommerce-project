@@ -33,7 +33,9 @@
                     </td>
                     <td>{{$product->description}}</td>
                     <td>{{$product->price}}</td>
-                    <td></td>
+                    <td>
+                        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-update-product-{{$product->id}}">Editar</button>
+                    </td>
                     <td>
                         <form action="{{ route('products.delete', [$product->id]) }}" method="post">
                             @csrf
@@ -41,6 +43,7 @@
                         </form>                        
                     </td>
                 </tr>
+                @include('admin.products.modal_update');
                 @endforeach
             </tbody>
         </table>

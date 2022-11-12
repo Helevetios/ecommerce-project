@@ -29,7 +29,7 @@
                         <a class="nav-link" href="{{ route('categories') }}">Categorias</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Stock</a>
+                        <a class="nav-link" href="{{ route('admin.stocks') }}">Stock</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}">Cerrar Sesión</a>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Stock;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -67,11 +68,38 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
+    public function productsUpdate(Request $request, $productId){
+        $product = Product::find($productId);
+        if($request->hasFile('image')){
+            Storage::delete('public/'.$product->image);
+            $product->image = $request->file('image')->store('uploads','public');
+        }
+        
+        $product->name = $request->name;
+        $product->category_id = $request->category_id;
+        $product->description = $request->description;
+        $product->price = $request->price;
+
+        $product->save();
+
+        return redirect()->back();
+    }
+
     public function productsDelete($productId){
         $product_delete = Product::find($productId);
         if(Storage::delete('public/'.$product_delete->image)){
             Product::destroy($productId);
         }
         return redirect()->back();
+    }
+
+    public function stockIndex(){
+        $products = Product::all();
+        $stocks = Stock::all();
+
+        return view('admin.stocks.stocks',[
+            'products' => $products,
+            'stocks' => $stocks
+        ]);
     }
 }
