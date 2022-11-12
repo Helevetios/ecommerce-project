@@ -42,4 +42,7 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::post('/categories/store',[AdminController::class,'categoriesStore'])->name('categories.store');
     Route::post('/categories/update/{categoryId}',[AdminController::class,'categoriesUpdate'])->name('categories.update');
     Route::post('/categories/delete/{categoryId}',[AdminController::class,'categoriesDelete'])->name('categories.delete');
+    #products
+    Route::get('/products',[AdminController::class,'productsIndex'])->name('products');
+    Route::post('/products/store',[AdminController::class,'productsStore'])->name('products.store');
 });

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
@@ -34,6 +35,34 @@ class AdminController extends Controller
     public function categoriesDelete($categoryId){
         $category = Category::find($categoryId);
         $category->delete();
+        return redirect()->back();
+    }
+
+    public function productsIndex(){
+        $products = Product::all();
+        $categories = Category::all();
+        return view('admin.products.products',[
+            'products' => $products,
+            'categories' => $categories
+        ]);
+    }
+
+    public function productsStore(Request $request){
+        $newProduct = new Product();
+        $this->validate($request,[
+            'name' => 'required',
+            'category_id' => 'required',
+            'image' => 'required',
+            'description' => 'required',
+            'price' => 'required'
+        ]);
+        $newProduct->name = $request->name;
+        $newProduct->category_id = $request->category_id;
+        $newProduct->image = $request->file('image')->store('uploads','public');
+        $newProduct->description = $request->description;
+        $newProduct->price = $request->price;
+        
+        $newProduct->save();
         return redirect()->back();
     }
 }
