@@ -102,4 +102,20 @@ class AdminController extends Controller
             'stocks' => $stocks
         ]);
     }
+
+    public function stockStore(Request $request){
+        $this->validate($request,[
+            'product_id' => 'required',
+            'stock' => 'required'
+        ]);
+        Stock::create($request->all());
+        return redirect()->back();
+    }
+
+    public function stockUpdate(Request $request, $stockId){
+        $stock = Stock::find($stockId);
+        $stock->stock = $request->stock;
+        $stock->save();
+        return redirect()->back();
+    }
 }

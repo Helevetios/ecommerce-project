@@ -55,7 +55,6 @@
                     <label for="name">Categoria</label>
                     <input type="text" name="name" class="form-control">
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                         <button class="btn btn-primary">Guardar</button>
                     </div>
                 </form>
