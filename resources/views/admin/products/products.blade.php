@@ -1,4 +1,4 @@
-@extends('admin.products.layout')
+@extends('admin.categories.layout')
 
 @section('title','Productos')
 
@@ -9,44 +9,46 @@
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-product-add">Agregar
                 Nuevo</button>
         </div>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Categoria</th>
-                    <th>Imagen</th>
-                    <th>Descripción</th>
-                    <th>Precio</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($products as $product)
-                <tr>
-                    <td>{{$product->id}}</td>
-                    <td>{{$product->name}}</td>
-                    <td>{{$product->category->name}}</td>
-                    <td>
-                        <img src="{{ asset('storage').'/'.$product->image }}" style="width: 100px">
-                    </td>
-                    <td>{{$product->description}}</td>
-                    <td>{{$product->price}}</td>
-                    <td>
-                        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-update-product-{{$product->id}}">Editar</button>
-                    </td>
-                    <td>
-                        <form action="{{ route('products.delete', [$product->id]) }}" method="post">
-                            @csrf
-                            <button class="btn btn-danger" onclick="return confirm('¿Estas seguro de borrar este elemento?')">Eliminar</button>
-                        </form>                        
-                    </td>
-                </tr>
-                @include('admin.products.modal_update');
-                @endforeach
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Categoria</th>
+                        <th>Imagen</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($products as $product)
+                    <tr>
+                        <td>{{$product->id}}</td>
+                        <td>{{$product->name}}</td>
+                        <td>{{$product->category->name}}</td>
+                        <td>
+                            <img src="{{ asset('storage').'/'.$product->image }}" style="width: 100px">
+                        </td>
+                        <td>{{$product->description}}</td>
+                        <td>{{$product->price}}</td>
+                        <td>
+                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-update-product-{{$product->id}}">Editar</button>
+                        </td>
+                        <td>
+                            <form action="{{ route('products.delete', [$product->id]) }}" method="post">
+                                @csrf
+                                <button class="btn btn-danger" onclick="return confirm('¿Estas seguro de borrar este elemento?')">Eliminar</button>
+                            </form>                        
+                        </td>
+                    </tr>
+                    @include('admin.products.modal_update')
+                    @endforeach
+                </tbody>
+            </table>
+        </div> 
     </div>
 </div>
 

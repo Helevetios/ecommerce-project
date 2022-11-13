@@ -1,4 +1,4 @@
-@extends('admin.products.layout')
+@extends('admin.categories.layout')
 
 @section('title','Stocks')
 
@@ -28,7 +28,7 @@
                         <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-stock-update-{{$stock->id}}">Editar</button>
                     </td>
                 </tr>
-                @include('admin.stocks.modal_update');
+                @include('admin.stocks.modal_update')
                 @endforeach
             </tbody>
         </table>
