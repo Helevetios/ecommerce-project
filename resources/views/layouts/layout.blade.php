@@ -22,16 +22,7 @@
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{{ route('home') }}">Inicio</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Productos
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                        </ul>
-                    </li>
-                    
+                    @yield('link')
                     @auth
                         <li class="nav-item">
                             <a class="nav-link" href="#">Historial de compras</a>

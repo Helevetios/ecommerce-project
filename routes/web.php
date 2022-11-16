@@ -30,8 +30,8 @@ Route::post('/login', [LoginController::class,'login'])->name('login');
 
 #User Routes
 Route::get('/home/user',[HomeController::class,'user'])->name('user')->middleware('auth');
-
 Route::get('/home',[HomeController::class,'index'])->name('home');
+Route::get('/home/{categoryId}',[HomeController::class,'products'])->name('home.products');
 Route::get('/logout',[LogoutController::class,'logout'])->name('logout');
 
 #Admin Routes
