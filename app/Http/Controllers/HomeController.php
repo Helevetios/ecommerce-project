@@ -20,7 +20,8 @@ class HomeController extends Controller
     }
     
     public function products($categoryId){
+        $categories = Category::all();
         $products = DB::table('products')->where('category_id','=',$categoryId)->get();
-        dd($products);
+        return view('home.products', compact('categories','products'));
     }
 }
