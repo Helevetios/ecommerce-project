@@ -17,11 +17,13 @@
 @endsection
 
 @section('content')
-    <div class="container">
-        <br>
-        <h1>Datos del Usuario</h1>
-        <br>
-        <div class="row">
+<div class="container">
+    <br>
+    <h1>Datos del Usuario</h1>
+    <br>
+
+    <div class="row">
+        <div class="table-responsive">
             <table class="table">
                 <thead>
                     <tr>
@@ -42,4 +44,5 @@
             </table>
         </div>
     </div>
+</div>
 @endsection

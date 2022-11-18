@@ -32,6 +32,9 @@
                         <a class="nav-link" href="{{ route('admin.stocks') }}">Stock</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="{{ route('home')}}">Visitar Sitio</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('logout') }}">Cerrar Sesión</a>
                     </li>
                 </ul>

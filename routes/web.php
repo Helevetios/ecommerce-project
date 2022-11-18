@@ -32,6 +32,7 @@ Route::post('/login', [LoginController::class,'login'])->name('login');
 Route::get('/home/user',[HomeController::class,'user'])->name('user')->middleware('auth');
 Route::get('/home',[HomeController::class,'index'])->name('home');
 Route::get('/home/{categoryId}',[HomeController::class,'products'])->name('home.products');
+Route::post('home/purchase/{productId}',[HomeController::class,'purchase'])->name('home.purchase')->middleware('auth');
 Route::get('/logout',[LogoutController::class,'logout'])->name('logout');
 
 #Admin Routes

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Stock;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -21,7 +22,12 @@ class HomeController extends Controller
     
     public function products($categoryId){
         $categories = Category::all();
+        $stocks = Stock::all();
         $products = DB::table('products')->where('category_id','=',$categoryId)->get();
-        return view('home.products', compact('categories','products'));
+        return view('home.products', compact('categories','products','stocks'));
+    }
+
+    public function purchase(Request $request, $productId){
+        dd($request->quantity);
     }
 }
