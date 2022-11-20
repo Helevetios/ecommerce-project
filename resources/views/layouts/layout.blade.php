@@ -25,7 +25,7 @@
                     @yield('link')
                     @auth
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Historial de compras</a>
+                            <a class="nav-link" href="{{ route('home.history') }}">Historial de compras</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('user') }}">Usuario</a>

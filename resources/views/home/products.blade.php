@@ -18,6 +18,12 @@
 
 @section('content')
 <div class="container">
+    @if (Session::has('msg'))
+        <br>
+        <div class="alert alert-success">
+            <h5>{!! \Session::get('msg') !!}</h5>
+        </div>
+    @endif
     <div style="margin-top: 5%; margin-bottom: 5%">
         <h1></h1>
     </div>
@@ -35,7 +41,7 @@
                         @foreach ($stocks as $stock)
                             @if ($stock->product_id == $product->id)
                                 @if ($stock->stock == 0)
-                                    <p>No disponible</p>
+                                    <p>No hay stock disponible</p>
                                     <button class="btn btn-primary" disabled>Comprar</button>
                                 @else
                                     <p>Stock: {{$stock->stock}} Unidades</p>
@@ -65,16 +71,22 @@
 
                     <form action="{{ route('home.purchase', [$product->id]) }}" method="post">
                         @csrf
+
                         <div class="form-group">
                             <label for="name">Producto</label>
                             <input name="name" type="text" value="{{$product->name}}" class="form-control" disabled>
                         </div>
-      
+
                         <div class="form-group">
                             <label for="cantidad">Cantidad</label>
-                            <input name="quantity" type="number" class="form-control" min="1" value="1">
+                            <input name="quantity" type="number" class="form-control" min="1"   onchange="total({{$product->id}},{{$product->price}})" id="quantity-{{$product->id}}">
                         </div>
-                        
+
+                        <div class="form-group">
+                          <label for="total">Total</label>
+                          <p id="resultado-{{$product->id}}" class="form-control"></p>
+                        </div>           
+
                         <div class="modal-footer">
                             <button class="btn btn-primary">Comprar</button>
                         </div>
@@ -84,8 +96,14 @@
               </div>
             </div>
         </div>
-
         @endforeach
     </div>
 </div>
+<script>
+    function total(num1,num2){
+        var num3 = document.getElementById("quantity-"+num1).value;
+        rest = num2 * num3;
+        document.getElementById("resultado-"+num1).innerHTML=""+rest.toFixed(2);
+    }
+</script>
 @endsection
