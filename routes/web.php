@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[HomeController::class,'index'])->name('home');
 
 Route::get('register',[RegisterController::class,'show']);
 Route::post('/register', [RegisterController::class,'register'])->name('register');
@@ -29,8 +27,8 @@ Route::get('login',[LoginController::class,'show'])->name('login.show');
 Route::post('/login', [LoginController::class,'login'])->name('login');
 
 #User Routes
-Route::get('/home/user',[HomeController::class,'user'])->name('user')->middleware('auth');
 Route::get('/home',[HomeController::class,'index'])->name('home');
+Route::get('/home/user',[HomeController::class,'user'])->name('user')->middleware('auth');
 Route::get('/home/history',[HomeController::class,'history'])->name('home.history')->middleware('auth');
 Route::get('/home/{categoryId}',[HomeController::class,'products'])->name('home.products');
 Route::post('home/purchase/{productId}',[HomeController::class,'purchase'])->name('home.purchase')->middleware('auth');
