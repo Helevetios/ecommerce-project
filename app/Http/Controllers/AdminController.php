@@ -41,7 +41,7 @@ class AdminController extends Controller
     }
 
     public function productsIndex(){
-        $products = Product::all();
+        $products = Product::paginate(3);
         $categories = Category::all();
         return view('admin.products.products',[
             'products' => $products,

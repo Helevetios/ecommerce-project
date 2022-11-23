@@ -50,7 +50,9 @@
             </table>
         </div> 
     </div>
+    {{$products->links()}}
 </div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="modal-product-add" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
