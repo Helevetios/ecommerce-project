@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CarController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,6 +27,12 @@ Route::post('/register', [RegisterController::class,'register'])->name('register
 Route::get('login',[LoginController::class,'show'])->name('login.show');
 Route::post('/login', [LoginController::class,'login'])->name('login');
 
+#Car Routes
+Route::get('/home/car',[CarController::class,'index'])->name('home.car')->middleware('auth');
+Route::post('/home/car/{productId}',[CarController::class,'store'])->name('home.car.store')->middleware('auth');
+Route::post('/home/delete/{carId}',[CarController::class,'destroy'])->name('home.car.destroy')->middleware('auth');
+Route::post('home/buy',[CarController::class,'buy'])->name('home.buy')->middleware('auth');
+
 #User Routes
 Route::get('/home',[HomeController::class,'index'])->name('home');
 Route::get('/home/user',[HomeController::class,'user'])->name('user')->middleware('auth');
@@ -33,6 +40,8 @@ Route::get('/home/history',[HomeController::class,'history'])->name('home.histor
 Route::get('/home/{categoryId}',[HomeController::class,'products'])->name('home.products');
 Route::post('home/purchase/{productId}',[HomeController::class,'purchase'])->name('home.purchase')->middleware('auth');
 Route::get('/logout',[LogoutController::class,'logout'])->name('logout');
+
+
 
 #Admin Routes
 Route::prefix('admin')->middleware('auth')->group(function(){

@@ -45,6 +45,9 @@
                                     <button class="btn btn-primary" disabled>Comprar</button>
                                 @else
                                     <p>Stock: {{$stock->stock}} Unidades</p>
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#product-car-{{$product->id}}">
+                                        Añadir Carrito
+                                        </button>
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#product-add-{{$product->id}}">
                                     Comprar
                                     </button>
@@ -53,6 +56,7 @@
                         @endforeach
                     @endauth
                     @guest
+                        <button class="btn btn-primary" disabled>Añadir Carrito</button>
                         <button class="btn btn-primary" disabled>Comprar</button>
                         <p style="font-size: 14px; padding: 5px">Inicie sesión para poder realizar compras</p>
                     @endguest
@@ -90,7 +94,42 @@
                         <div class="modal-footer">
                             <button class="btn btn-primary">Comprar</button>
                         </div>
-                        
+                    </form>
+                </div>
+              </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="product-car-{{$product->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Añadir al carrito  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <form action="{{ route('home.car.store', [$product->id]) }}" method="post">
+                        @csrf
+
+                        <div class="form-group">
+                            <label for="name">Producto</label>
+                            <input name="name" type="text" value="{{$product->name}}" class="form-control" disabled>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cantidad">Cantidad</label>
+                            <input name="cant" type="number" class="form-control" min="1"   onchange="car({{$product->id}},{{$product->price}})" id="cant-{{$product->id}}">
+                        </div>
+
+                        <div class="form-group">
+                          <label for="total">Total</label>
+                          <p id="res-{{$product->id}}" class="form-control"></p>
+                        </div>           
+
+                        <div class="modal-footer">
+                            <button class="btn btn-primary">Añadir</button>
+                        </div>
                     </form>
                 </div>
               </div>
@@ -104,6 +143,14 @@
         var num3 = document.getElementById("quantity-"+num1).value;
         rest = num2 * num3;
         document.getElementById("resultado-"+num1).innerHTML=""+rest.toFixed(2);
+    }
+</script>
+
+<script>
+    function car(num1,num2){
+        var num3 = document.getElementById("cant-"+num1).value;
+        rest = num2 * num3;
+        document.getElementById("res-"+num1).innerHTML=""+rest.toFixed(2);
     }
 </script>
 @endsection
