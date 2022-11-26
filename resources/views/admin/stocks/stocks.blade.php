@@ -33,6 +33,7 @@
             </tbody>
         </table>
     </div>
+    {{$stocks->links()}}
 </div>
 
 <!-- Modal -->

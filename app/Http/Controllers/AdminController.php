@@ -95,7 +95,7 @@ class AdminController extends Controller
 
     public function stockIndex(){
         $products = Product::all();
-        $stocks = Stock::all();
+        $stocks = Stock::paginate(5);
 
         return view('admin.stocks.stocks',[
             'products' => $products,

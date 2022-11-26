@@ -31,8 +31,8 @@
         @foreach ($products as $product)
 
         <div class="col-md-4" style="padding-bottom:30px ">
-            <div class="card">
-                <img src="{{ asset('storage').'/'.$product->image }}" class="card-img-top">
+            <div class="card bg-dark">
+                <img src="{{ asset('storage').'/'.$product->image }}" class="card-img-top" width="600px" height="300px">
                 <div class="card-body">
                     <h2 style="font-size: 24px" class="card-title">{{$product->name}}</h2>
                     <p style="font-size: 18px">{{$product->description}}</p>
@@ -78,17 +78,17 @@
 
                         <div class="form-group">
                             <label for="name">Producto</label>
-                            <input name="name" type="text" value="{{$product->name}}" class="form-control" disabled>
+                            <input name="name" type="text" value="{{$product->name}}" class="form-control bg-light" disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="cantidad">Cantidad</label>
-                            <input name="quantity" type="number" class="form-control" min="1"   onchange="total({{$product->id}},{{$product->price}})" id="quantity-{{$product->id}}">
+                            <input name="quantity" type="number" class="form-control bg-light" min="1"   onchange="total({{$product->id}},{{$product->price}})" id="quantity-{{$product->id}}">
                         </div>
 
                         <div class="form-group">
                           <label for="total">Total</label>
-                          <p id="resultado-{{$product->id}}" class="form-control"></p>
+                          <p id="resultado-{{$product->id}}" class="form-control bg-light"></p>
                         </div>           
 
                         <div class="modal-footer">
@@ -114,17 +114,17 @@
 
                         <div class="form-group">
                             <label for="name">Producto</label>
-                            <input name="name" type="text" value="{{$product->name}}" class="form-control" disabled>
+                            <input name="name" type="text" value="{{$product->name}}" class="form-control bg-light" disabled>
                         </div>
 
                         <div class="form-group">
                             <label for="cantidad">Cantidad</label>
-                            <input name="cant" type="number" class="form-control" min="1"   onchange="car({{$product->id}},{{$product->price}})" id="cant-{{$product->id}}">
+                            <input name="cant" type="number" class="form-control bg-light" min="1"   onchange="car({{$product->id}},{{$product->price}})" id="cant-{{$product->id}}">
                         </div>
 
                         <div class="form-group">
                           <label for="total">Total</label>
-                          <p id="res-{{$product->id}}" class="form-control"></p>
+                          <p id="res-{{$product->id}}" class="form-control bg-light"></p>
                         </div>           
 
                         <div class="modal-footer">

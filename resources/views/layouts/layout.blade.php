@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-primary bg-primary d-flex flex-column flex-md-row justify-content-between">
         <div class="container-fluid">
             <a class="navbar-brand">Mis Peques</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"

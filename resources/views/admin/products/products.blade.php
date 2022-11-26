@@ -30,7 +30,7 @@
                         <td>{{$product->name}}</td>
                         <td>{{$product->category->name}}</td>
                         <td>
-                            <img src="{{ asset('storage').'/'.$product->image }}" style="width: 100px">
+                            <img src="{{ asset('storage').'/'.$product->image }}" width="100px" height="70px">
                         </td>
                         <td>{{$product->description}}</td>
                         <td>{{$product->price}}</td>
