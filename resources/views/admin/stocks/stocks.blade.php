@@ -9,7 +9,7 @@
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-stock-add">Agregar
                 Nuevo</button>
         </div>
-        <table class="table">
+        <table class="table" id="table_id">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -67,4 +67,12 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('data_table')
+    <script>
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+        });
+    </script>
 @endsection

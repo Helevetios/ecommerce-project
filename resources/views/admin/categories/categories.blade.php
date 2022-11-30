@@ -9,7 +9,7 @@
         <div style="margin-top: 5%; margin-bottom: 5%">
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar Nueva</button>
         </div>
-        <table class="table">
+        <table class="table" id="table_id">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -62,4 +62,12 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('data_table')
+    <script>
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+        });
+    </script>
 @endsection

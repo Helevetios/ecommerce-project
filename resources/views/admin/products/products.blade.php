@@ -10,7 +10,7 @@
                 Nuevo</button>
         </div>
         <div class="table-responsive">
-            <table class="table">
+            <table class="table" id="table_id">
                 <thead>
                     <tr>
                         <th>Id</th>
@@ -104,4 +104,12 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('data_table')
+    <script>
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+        });
+    </script>
 @endsection
