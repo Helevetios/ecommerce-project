@@ -10,7 +10,7 @@
         <div class="row">
             @foreach ($products as $product)
             <div class="col-md-4" style="padding-bottom:30px ">
-                <div class="card bg-dark">
+                <div class="card bg-light">
                     <img src="{{ asset('storage').'/'.$product->image }}" class="card-img-top" width="600px" height="300px">
                     <div class="card-body">
                         <h2 style="font-size: 24px" class="card-title">{{$product->name}}</h2>

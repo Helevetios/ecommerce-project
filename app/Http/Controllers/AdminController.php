@@ -41,7 +41,7 @@ class AdminController extends Controller
     }
 
     public function productsIndex(){
-        $products = Product::paginate(3);
+        $products = Product::all();
         $categories = Category::all();
         return view('admin.products.products',[
             'products' => $products,
@@ -95,7 +95,7 @@ class AdminController extends Controller
 
     public function stockIndex(){
         $products = Product::all();
-        $stocks = Stock::paginate(5);
+        $stocks = Stock::all();
 
         return view('admin.stocks.stocks',[
             'products' => $products,

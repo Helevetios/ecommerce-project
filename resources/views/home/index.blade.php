@@ -24,14 +24,14 @@
         height="400" loading="lazy">
     </div>
     <div class="col-lg-6">
-      <h1 class="display-5 fw-bold lh-1 mb-3">Lorem ipsum dolor sit amet.</h1>
+      <h1 class="display-5 fw-bold lh-1 mb-3">TIENDA MIS PEQUES</h1>
       <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, esse!</p>
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-6">
-      <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
           <h2 class="display-5">Cuidado Personal</h2>
           <p class="lead">And an even wittier subheading.</p>
@@ -43,7 +43,7 @@
     </div>
 
     <div class="col-md-6">
-      <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
           <h2 class="display-5">Zapatos</h2>
           <p class="lead">And an even wittier subheading.</p>
@@ -58,9 +58,9 @@
 
   <div class="row">
     <div class="col-md-4">
-      <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
-          <h2 class="display-5">Ropa</h2>
+          <h2 class="display-5">Papeleria</h2>
           <p class="lead">And an even wittier subheading.</p>
         </div>
         <div style="padding-bottom: 50px">
@@ -70,7 +70,7 @@
     </div>
 
     <div class="col-md-4">
-      <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
           <h2 class="display-5">Fiesta</h2>
           <p class="lead">And an even wittier subheading.</p>
@@ -82,7 +82,7 @@
     </div>
 
     <div class="col-md-4">
-      <div class="bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
           <h2 class="display-5">Mascotas</h2>
           <p class="lead">And an even wittier subheading.</p>
@@ -95,7 +95,7 @@
   </div>
 </div>
 
-<footer class="text-center text-lg-start bg-dark text-muted">
+<footer class="text-center text-lg-start bg-light text-muted">
 
   <section class="d-flex justify-content-center justify-content-lg-between p-4" style="background-color: rgba(0, 0, 0, 0.05);">
 
