@@ -24,8 +24,8 @@
         height="400" loading="lazy">
     </div>
     <div class="col-lg-6">
-      <h1 class="display-5 fw-bold lh-1 mb-3">TIENDA MIS PEQUES</h1>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, esse!</p>
+      <h1 class="display-5 fw-bold lh-1 mb-3">Tienda Mis Peques</h1>
+      <p class="lead">Encuentra todo lo que quieras para ese nuevo estilo de vida, look o esa persona especial</p>
     </div>
   </div>
 
@@ -34,7 +34,7 @@
       <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
           <h2 class="display-5">Cuidado Personal</h2>
-          <p class="lead">And an even wittier subheading.</p>
+          <p class="lead">Lo mejor para tu persona</p>
         </div>
         <div style="padding-bottom: 50px">
           <img src="{{ asset('storage/static/index_image2.jpg') }}" width="300px" height="200px">
@@ -46,7 +46,7 @@
       <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
           <h2 class="display-5">Zapatos</h2>
-          <p class="lead">And an even wittier subheading.</p>
+          <p class="lead">El calzado que andabas buscando</p>
         </div>
         <div style="padding-bottom: 50px">
           <img src="{{ asset('storage/static/index_image3.jpg') }}" width="300px" height="200px">
@@ -61,7 +61,7 @@
       <div class="bg-light me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
           <h2 class="display-5">Papeleria</h2>
-          <p class="lead">And an even wittier subheading.</p>
+          <p class="lead">Todo lo que necesitas</p>
         </div>
         <div style="padding-bottom: 50px">
           <img src="{{ asset('storage/static/index_image4.jpg') }}" width="200px" height="100px">
@@ -105,9 +105,7 @@
       <div class="row mt-3">
         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
           <h6 class="text-uppercase fw-bold mb-4">Mis Peques</h6>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam fuga ratione ullam officia reiciendis et
-            aut illo distinctio fugit quae velit labore ea porro dolorem soluta maiores facere placeat, exercitationem
-            voluptates modi! Adipisci, officia rerum.</p>
+          <p>Tienda mis Peques: Es una tienda internacional  </p>
         </div>
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <h6 class="text-uppercase fw-bold mb-4">
@@ -126,4 +124,4 @@
   </div>
 
 </footer>
-@endsection
+@endsection 
