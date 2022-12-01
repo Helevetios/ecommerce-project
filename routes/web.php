@@ -35,6 +35,7 @@ Route::post('home/buy',[CarController::class,'buy'])->name('home.buy')->middlewa
 
 #User Routes
 Route::get('/home',[HomeController::class,'index'])->name('home');
+Route::post('/home/search',[HomeController::class,'search'])->name('search');
 Route::get('/home/user',[HomeController::class,'user'])->name('user')->middleware('auth');
 Route::get('/home/history',[HomeController::class,'history'])->name('home.history')->middleware('auth');
 Route::get('/home/{categoryId}',[HomeController::class,'products'])->name('home.products');

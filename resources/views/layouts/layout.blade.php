@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex flex-column flex-md-row justify-content-between">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand">Mis Peques</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -18,7 +18,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="{{ route('home') }}">Inicio</a>
                     </li>
@@ -49,6 +49,11 @@
                     </li>
                     @endguest
                 </ul>
+                <form class="d-flex" method="POST" action="{{ route('search') }}">
+                    @csrf
+                    <input name="search" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-secondary" type="submit">Buscar</button>
+                </form>
             </div>
         </div>
     </nav>

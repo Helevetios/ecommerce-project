@@ -14,6 +14,7 @@
         @endforeach
     </ul>
 </li>
+
 @endsection
 
 @section('content')

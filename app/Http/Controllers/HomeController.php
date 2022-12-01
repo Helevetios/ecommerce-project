@@ -54,4 +54,20 @@ class HomeController extends Controller
         $purchases = Purchase::where('user_id',auth()->user()->id)->paginate(5);
         return view('home.purchases', compact('purchases','categories'));
     }
+
+    public function search(Request $request){
+        $this->validate($request,[
+            'search' => 'required'
+        ]);
+        $products = DB::table('products')->where('name','like', '%'.$request->search.'%')->get();
+        $stocks = Stock::all();
+        $error = "";
+        if($products->isEmpty()){
+            $error = "No se han encontrado Productos...";
+            return view('home.search', compact('products','stocks','error'));
+        }else{
+            $error = "Productos Encontrados...";
+            return view('home.search', compact('products','stocks','error'));
+        }
+    }
 }

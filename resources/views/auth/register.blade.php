@@ -55,9 +55,8 @@
                                 <label for="address">Dirección</label>
                                 <input type="address" name="address" class="form-control">
                             </div>
-
+                            <br>
                             <button class="btn btn-primary">Registrarse</button>
-
                         </form>
                     </div>
                 </div>
