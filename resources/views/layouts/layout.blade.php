@@ -7,10 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mis Peques | @yield('title')</title>
     <link rel="stylesheet" href="{{ asset('assests/css/bootstrap.min.css') }}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand">Mis Peques</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -52,13 +53,17 @@
                 <form class="d-flex" method="POST" action="{{ route('search') }}">
                     @csrf
                     <input name="search" class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-success" type="submit">Buscar</button>
+                    <button class="btn btn-secondary" type="submit">Buscar</button>
                 </form>
             </div>
         </div>
     </nav>
     @yield('content')
     <script src="{{ asset('assests/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
 
 </html>

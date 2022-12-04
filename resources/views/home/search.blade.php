@@ -5,12 +5,12 @@
 @section('content')
     <div class="container">
         <div style="margin-top: 3%; margin-bottom: 3%">
-            <h1 class="text-center">{{$error}}</h1>
+            <h1 class="text-center" data-aos="zoom-in">{{$error}}</h1>
         </div>
         <div class="row">
             @foreach ($products as $product)
-            <div class="col-md-4" style="padding-bottom:30px ">
-                <div class="card bg-light">
+            <div class="col-md-4" style="padding-bottom:30px">
+                <div class="card">
                     <img src="{{ asset('storage').'/'.$product->image }}" class="card-img-top" width="600px" height="300px">
                     <div class="card-body">
                         <h2 style="font-size: 24px" class="card-title">{{$product->name}}</h2>
@@ -24,7 +24,7 @@
                                         <button class="btn btn-primary" disabled>Comprar</button>
                                     @else
                                         <p>Stock: {{$stock->stock}} Unidades</p>
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#product-car-{{$product->id}}">
+                                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#product-car-{{$product->id}}">
                                             Añadir Carrito
                                         </button>
                                     @endif
@@ -32,7 +32,7 @@
                             @endforeach
                         @endauth
                         @guest
-                            <button class="btn btn-primary" disabled>Añadir Carrito</button>
+                            <button class="btn btn-secondary" disabled>Añadir Carrito</button>
                             <p style="font-size: 14px; padding: 5px">Inicie sesión para poder realizar compras</p>
                         @endguest
                     </div>

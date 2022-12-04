@@ -52,7 +52,7 @@
     </div>
     <form action="{{ route('home.buy') }}" method="post">
         @csrf
-        <button class="btn btn-primary" onclick="return confirm('¿Desea continuar?')">Comprar</button>
+        <button class="btn btn-secondary" onclick="return confirm('¿Desea continuar?')">Comprar</button>
     </form>
     {{$cars->links()}}
 </div>

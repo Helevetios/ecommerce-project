@@ -31,8 +31,8 @@
     <div class="row">
         @foreach ($products as $product)
 
-        <div class="col-md-4" style="padding-bottom:30px ">
-            <div class="card bg-light">
+        <div class="col-md-4" style="padding-bottom:30px " data-aos="zoom-in-up">
+            <div class="card">
                 <img src="{{ asset('storage').'/'.$product->image }}" class="card-img-top" width="600px" height="300px">
                 <div class="card-body">
                     <h2 style="font-size: 24px" class="card-title">{{$product->name}}</h2>
@@ -46,10 +46,10 @@
                                     <button class="btn btn-primary" disabled>Comprar</button>
                                 @else
                                     <p>Stock: {{$stock->stock}} Unidades</p>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#product-car-{{$product->id}}">
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#product-car-{{$product->id}}">
                                         Añadir Carrito
                                         </button>
-                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#product-add-{{$product->id}}">
+                                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#product-add-{{$product->id}}">
                                     Comprar
                                     </button>
                                 @endif
@@ -57,8 +57,8 @@
                         @endforeach
                     @endauth
                     @guest
-                        <button class="btn btn-primary" disabled>Añadir Carrito</button>
-                        <button class="btn btn-primary" disabled>Comprar</button>
+                        <button class="btn btn-secondary" disabled>Añadir Carrito</button>
+                        <button class="btn btn-secondary" disabled>Comprar</button>
                         <p style="font-size: 14px; padding: 5px">Inicie sesión para poder realizar compras</p>
                     @endguest
                 </div>
@@ -93,7 +93,7 @@
                         </div>           
 
                         <div class="modal-footer">
-                            <button class="btn btn-primary">Comprar</button>
+                            <button class="btn btn-secondary">Comprar</button>
                         </div>
                     </form>
                 </div>
@@ -129,7 +129,7 @@
                         </div>           
 
                         <div class="modal-footer">
-                            <button class="btn btn-primary">Añadir</button>
+                            <button class="btn btn-secondary">Añadir</button>
                         </div>
                     </form>
                 </div>
