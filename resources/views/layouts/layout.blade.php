@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mis Peques | @yield('title')</title>
-    <link rel="stylesheet" href="https://ecommerce-project-production-ee50.up.railway.app/assests/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="{{ asset('assests/css/bootstrap.min.css') }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
