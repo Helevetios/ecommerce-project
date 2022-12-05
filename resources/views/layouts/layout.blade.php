@@ -10,7 +10,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="small">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="text-size-adjust: 10px">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('home') }}">Mis Peques</a>

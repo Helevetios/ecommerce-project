@@ -105,11 +105,3 @@
     </div>
 </div>
 @endsection
-
-@section('data_table')
-    <script>
-        $(document).ready( function () {
-            $('#table_id').DataTable();
-        });
-    </script>
-@endsection
