@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="{{ asset('assests/css/bootstrap.min.css') }}">
 </head>
 
-<body>
+<body class="small">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand">Administrador</a>
@@ -45,6 +45,11 @@
     @yield('content')
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready( function () {
+            $('#table_id').DataTable();
+        });
+    </script>
     @yield('data_table')
     <script src="{{ asset('assests/js/bootstrap.bundle.min.js') }}"></script>
 </body>
