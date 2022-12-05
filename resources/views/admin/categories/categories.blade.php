@@ -9,34 +9,36 @@
         <div style="margin-top: 5%; margin-bottom: 5%">
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar Nueva</button>
         </div>
-        <table class="table" id="table_id">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($categories as $category)
-                <tr>
-                    <td>{{$category->id}}</td>
-                    <td>{{$category->name}}</td>
-                    <td>
-                        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-update-category-{{$category->id}}">Editar</button>
-                    </td>
-                    <td>
-                        <form action="{{ route('categories.delete', [$category->id]) }}" method="post">
-                            @csrf
-                            <button class="btn btn-danger" onclick="return confirm('¿Estas seguro de borrar este elemento?')">Eliminar</button>
-                        </form>
-                    </td>
-                </tr>
-                @include('admin.categories.modal_update')
-                @endforeach
-            </tbody>
-        </table>
+        <div class="table-responsive">
+            <table class="table" id="table_id">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($categories as $category)
+                    <tr>
+                        <td>{{$category->id}}</td>
+                        <td>{{$category->name}}</td>
+                        <td>
+                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-update-category-{{$category->id}}">Editar</button>
+                        </td>
+                        <td>
+                            <form action="{{ route('categories.delete', [$category->id]) }}" method="post">
+                                @csrf
+                                <button class="btn btn-danger" onclick="return confirm('¿Estas seguro de borrar este elemento?')">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    @include('admin.categories.modal_update')
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
     <br>
 </div>

@@ -11,7 +11,7 @@
 </head>
 
 <body class="small">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="text-size-adjust: 10px">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="text-size-adjust: 10px">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('home') }}">Mis Peques</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -54,7 +54,7 @@
                     @csrf
                     <input name="search" class="form-control me-2" type="search" placeholder="Buscar"
                         aria-label="Search">
-                    <button class="btn btn-secondary" type="submit">Buscar</button>
+                    <button class="btn btn-dark" type="submit">Buscar</button>
                 </form>
             </div>
         </div>

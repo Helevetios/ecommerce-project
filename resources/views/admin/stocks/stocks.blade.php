@@ -9,29 +9,31 @@
             <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal-stock-add">Agregar
                 Nuevo</button>
         </div>
-        <table class="table" id="table_id">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Producto</th>
-                    <th>Stock</th>
-                    <th>Editar</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($stocks as $stock)
-                <tr>
-                    <td>{{$stock->id}}</td>
-                    <td>{{$stock->product->name}}</td>
-                    <td>{{$stock->stock}}</td>
-                    <td>
-                        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-stock-update-{{$stock->id}}">Editar</button>
-                    </td>
-                </tr>
-                @include('admin.stocks.modal_update')
-                @endforeach
-            </tbody>
-        </table>
+        <div class="responsive-table">
+            <table class="table" id="table_id">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Producto</th>
+                        <th>Stock</th>
+                        <th>Editar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($stocks as $stock)
+                    <tr>
+                        <td>{{$stock->id}}</td>
+                        <td>{{$stock->product->name}}</td>
+                        <td>{{$stock->stock}}</td>
+                        <td>
+                            <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modal-stock-update-{{$stock->id}}">Editar</button>
+                        </td>
+                    </tr>
+                    @include('admin.stocks.modal_update')
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     </div>
     <br>
 </div>
