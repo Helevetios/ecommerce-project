@@ -61,4 +61,6 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('/stock',[AdminController::class,'stockIndex'])->name('admin.stocks');
     Route::post('/stock/store',[AdminController::class,'stockStore'])->name('stocks.store');
     Route::post('/stock/update/{stockId}',[AdminController::class,'stockUpdate'])->name('stocks.update');
+    #Sales
+    Route::get('/sales',[AdminController::class,'sales'])->name('admin.sales');
 });

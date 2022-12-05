@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Purchase;
 use App\Models\Stock;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -117,5 +118,10 @@ class AdminController extends Controller
         $stock->stock = $request->stock;
         $stock->save();
         return redirect()->back();
+    }
+
+    public function sales(){
+        $sales = Purchase::all();
+        return view('admin.sales.index', compact ('sales'));
     }
 }

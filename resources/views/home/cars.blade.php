@@ -18,6 +18,12 @@
 
 @section('content')
 <div class="container">
+    @if (Session::has('msg'))
+        <br>
+        <div class="alert alert-success">
+            <h5>{!! \Session::get('msg') !!}</h5>
+        </div>
+    @endif
     <div class="row">
         <div style="margin-top: 5%; margin-bottom: 5%">
             <h1>Carrito</h1>

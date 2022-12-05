@@ -55,6 +55,6 @@ class CarController extends Controller
             $NewPurchase->save();
         }
         DB::delete('delete from cars');
-        return redirect()->back();
+        return redirect()->back()->with('msg',"Operacion exitosa");
     }
 }
