@@ -41,14 +41,15 @@
                         <td>
                             <form action="{{ route('home.car.destroy', [$car->id]) }}" method="post">
                                 @csrf
-                                <button class="btn btn-danger" onclick="return confirm('¿Desea eliminar el elemento?')">Eliminar</button>
+                                <button class="btn btn-danger"
+                                    onclick="return confirm('¿Desea eliminar el elemento?')">Eliminar</button>
                             </form>
                         </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
-        </div> 
+        </div>
     </div>
     <form action="{{ route('home.buy') }}" method="post">
         @csrf

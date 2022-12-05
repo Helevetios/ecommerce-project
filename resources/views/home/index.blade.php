@@ -10,7 +10,9 @@
   </a>
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown" data-aos="slide-up">
     @foreach ($categories as $category)
-    <li><a class="dropdown-item" href="{{ route('home.products', [$category->id]) }}">{{$category->name}}</a></li>
+    <li><a class="dropdown-item" href="{{ route('home.products', [$category->id]) }}">{{$category->name}}
+    </a>
+    </li>
     @endforeach
   </ul>
 </li>
@@ -21,7 +23,9 @@
 <div class="container col-xxl-8 px-4 py-5">
   <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6" data-aos="zoom-in-up">
-      <img src="https://media.istockphoto.com/id/913316472/es/vector/concepto-de-compras-en-l%C3%ADnea-comprar-ordenador-port%C3%A1til-abierto-con-pantalla-plano-de-estilo.jpg?s=612x612&w=0&k=20&c=8IYlV0-5paF2zDb4t9ulQJw4t3aweTrXOBu0lCvTNHc=" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="500" height="300" loading="lazy">
+      <img
+        src="https://media.istockphoto.com/id/913316472/es/vector/concepto-de-compras-en-l%C3%ADnea-comprar-ordenador-port%C3%A1til-abierto-con-pantalla-plano-de-estilo.jpg?s=612x612&w=0&k=20&c=8IYlV0-5paF2zDb4t9ulQJw4t3aweTrXOBu0lCvTNHc="
+        class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="500" height="300" loading="lazy">
     </div>
     <div class="col-lg-6">
       <h1 class="display-5 fw-bold lh-1 mb-3">Tienda Mis Peques</h1>
@@ -40,7 +44,9 @@
           <p class="lead">Lo mejor para tu persona</p>
         </div>
         <div style="padding-bottom: 50px">
-          <img src="https://media.istockphoto.com/id/1097301210/es/vector/conjunto-de-paquetes-de-diferentes-cosm%C3%A9ticos.jpg?s=612x612&w=0&k=20&c=smbWYj9LyKouJbBkbMlzZYZXfb-Gbb-_CvFBhA692Kk=" width="300px" height="200px">
+          <img
+            src="https://media.istockphoto.com/id/1097301210/es/vector/conjunto-de-paquetes-de-diferentes-cosm%C3%A9ticos.jpg?s=612x612&w=0&k=20&c=smbWYj9LyKouJbBkbMlzZYZXfb-Gbb-_CvFBhA692Kk="
+            width="300px" height="200px">
         </div>
       </div>
     </div>
@@ -52,11 +58,13 @@
           <p class="lead">El calzado que andabas buscando</p>
         </div>
         <div style="padding-bottom: 50px">
-          <img src="https://media.istockphoto.com/id/1168124826/es/foto/zapatos-rosados-aislados-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=h0w3jNKe41IXmNUOMoKDqFzIWaodXfOjO08u5ZPm30Q=" width="300px" height="200px">
+          <img
+            src="https://media.istockphoto.com/id/1168124826/es/foto/zapatos-rosados-aislados-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=h0w3jNKe41IXmNUOMoKDqFzIWaodXfOjO08u5ZPm30Q="
+            width="300px" height="200px">
         </div>
       </div>
     </div>
-    
+
   </div>
   <hr>
   <h1 class="text-center fw-bold" style="padding: 70px; " data-aos="slide-up">Categorias</h1>
@@ -69,7 +77,9 @@
           <h2 class="display-5">Papeleria</h2>
         </div>
         <div style="padding-bottom: 50px">
-          <img src="https://media.istockphoto.com/id/485725200/es/foto/accesorios-escolares-y-de-oficina-en-fondo-de-madera.jpg?s=612x612&w=0&k=20&c=HV0Wd3tbk42-qsGVCxFvhoJKr8KDmm-ihE1CrEB2oHo=" width="200px" height="100px">
+          <img
+            src="https://media.istockphoto.com/id/485725200/es/foto/accesorios-escolares-y-de-oficina-en-fondo-de-madera.jpg?s=612x612&w=0&k=20&c=HV0Wd3tbk42-qsGVCxFvhoJKr8KDmm-ihE1CrEB2oHo="
+            width="200px" height="100px">
         </div>
       </div>
     </div>
@@ -80,7 +90,9 @@
           <h5 class="display-5">Juguetes</h5>
         </div>
         <div style="padding-bottom: 50px">
-          <img src="https://media.istockphoto.com/id/1322274556/es/foto/colecci%C3%B3n-de-diferentes-juguetes-sobre-mesa-de-madera.jpg?s=612x612&w=0&k=20&c=YRmLVRP14HSIBdw7SZcSzvhkoWlT827dGcC3MpS2TIM=" width="200px" height="100px">
+          <img
+            src="https://media.istockphoto.com/id/1322274556/es/foto/colecci%C3%B3n-de-diferentes-juguetes-sobre-mesa-de-madera.jpg?s=612x612&w=0&k=20&c=YRmLVRP14HSIBdw7SZcSzvhkoWlT827dGcC3MpS2TIM="
+            width="200px" height="100px">
         </div>
       </div>
     </div>
@@ -91,7 +103,9 @@
           <h2 class="display-5">Mascotas</h2>
         </div>
         <div style="padding-bottom: 50px">
-          <img src="https://media.istockphoto.com/id/1310331783/es/foto/amigos-esponjosos-un-perro-corgi-y-un-gato-tabby-sentarse-juntos-en-un-prado-de-primavera.jpg?s=612x612&w=0&k=20&c=rYr5ibc7Swp3Hdg83lungT_oyVHh6Qk0EJSD0wizrBc=" width="200px" height="100px">
+          <img
+            src="https://media.istockphoto.com/id/1310331783/es/foto/amigos-esponjosos-un-perro-corgi-y-un-gato-tabby-sentarse-juntos-en-un-prado-de-primavera.jpg?s=612x612&w=0&k=20&c=rYr5ibc7Swp3Hdg83lungT_oyVHh6Qk0EJSD0wizrBc="
+            width="200px" height="100px">
         </div>
       </div>
     </div>
