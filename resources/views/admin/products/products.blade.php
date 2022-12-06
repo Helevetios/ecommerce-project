@@ -88,12 +88,12 @@
 
                     <div class="form-group">
                         <label for="description">Descripción</label>
-                        <input type="text" name="description" class="form-control">
+                        <textarea name="description" cols="30" rows="10" style="resize: none" class="form-control"></textarea>
                     </div>
 
                     <div class="form-group">
                         <label for="price">Precio</label>
-                        <input type="number" name="price" class="form-control" step="0.01">
+                        <input type="number" name="price" class="form-control" step="0.01" min="1">
                     </div>
 
                     <div class="modal-footer">

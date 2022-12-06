@@ -16,7 +16,7 @@
                     </div>
                     <div class="form-group">
                         <label for="stock">Stock</label>
-                        <input type="number" name="stock" value="{{$stock->stock}}" class="form-control">
+                        <input type="number" name="stock" value="{{$stock->stock}}" class="form-control" min="1">
                         <div class="modal-footer">
                             <button class="btn btn-primary">Guardar</button>
                         </div>
