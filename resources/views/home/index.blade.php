@@ -78,7 +78,7 @@
     <div class="col-md-4" data-aos="zoom-in">
       <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
-          <h2 class="display-5">Papeleria</h2>
+          <h2 class="display-5">Papelería</h2>
         </div>
         <div style="padding-bottom: 50px">
           <a href="/home/11">
