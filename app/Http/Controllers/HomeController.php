@@ -24,8 +24,9 @@ class HomeController extends Controller
     public function products($categoryId){
         $categories = Category::all();
         $stocks = Stock::all();
+        $category_name = Category::where('id',$categoryId)->get();
         $products = DB::table('products')->where('category_id','=',$categoryId)->get();
-        return view('home.products', compact('categories','products','stocks'));
+        return view('home.products', compact('categories','products','stocks','category_name'));
     }
 
     public function purchase(Request $request, $productId){

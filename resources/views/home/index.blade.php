@@ -11,7 +11,7 @@
   <ul class="dropdown-menu" aria-labelledby="navbarDropdown" data-aos="slide-up">
     @foreach ($categories as $category)
     <li><a class="dropdown-item" href="{{ route('home.products', [$category->id]) }}">{{$category->name}}
-    </a>
+      </a>
     </li>
     @endforeach
   </ul>
@@ -34,8 +34,9 @@
   </div>
 </div>
 
-
 <div class="container">
+  <h1 class="fw-bold text-center" style="padding-bottom: 40px;" data-aos="slide-up">Descubre</h1>
+  <hr>
   <div class="row">
     <div class="col-md-6" data-aos="zoom-in">
       <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
@@ -44,9 +45,10 @@
           <p class="lead">Lo mejor para tu persona</p>
         </div>
         <div style="padding-bottom: 50px">
-          <img
-            src="https://media.istockphoto.com/id/1097301210/es/vector/conjunto-de-paquetes-de-diferentes-cosm%C3%A9ticos.jpg?s=612x612&w=0&k=20&c=smbWYj9LyKouJbBkbMlzZYZXfb-Gbb-_CvFBhA692Kk="
+          <a href="/home/4">
+            <img src="https://t4.ftcdn.net/jpg/02/24/31/27/240_F_224312774_YMAQq02RmHcvfwAH3VhwZDr28SLTE8tc.jpg"
             width="300px" height="200px">
+          </a>
         </div>
       </div>
     </div>
@@ -54,20 +56,22 @@
     <div class="col-md-6" data-aos="zoom-in">
       <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
-          <h2 class="display-5">Zapatos</h2>
-          <p class="lead">El calzado que andabas buscando</p>
+          <h2 class="display-5">Cocina</h2>
+          <p class="lead">Articulos para tu cocina</p>
         </div>
         <div style="padding-bottom: 50px">
-          <img
-            src="https://media.istockphoto.com/id/1168124826/es/foto/zapatos-rosados-aislados-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=h0w3jNKe41IXmNUOMoKDqFzIWaodXfOjO08u5ZPm30Q="
+          <a href="/home/5">
+            <img src="https://t4.ftcdn.net/jpg/00/77/82/13/240_F_77821372_IVVb3oJbkLPkpXhXF7v2EYghi89VaqRi.jpg"
             width="300px" height="200px">
+          </a>
         </div>
       </div>
     </div>
 
   </div>
-  <hr>
-  <h1 class="text-center fw-bold" style="padding: 70px; " data-aos="slide-up">Categorias</h1>
+
+  <h1 class="text-center fw-bold" style="padding-bottom: 40px; padding-top: 40px;" data-aos="slide-up">Categorias</h1>
+
   <hr>
 
   <div class="row">
@@ -77,9 +81,11 @@
           <h2 class="display-5">Papeleria</h2>
         </div>
         <div style="padding-bottom: 50px">
-          <img
+          <a href="/home/11">
+            <img
             src="https://media.istockphoto.com/id/485725200/es/foto/accesorios-escolares-y-de-oficina-en-fondo-de-madera.jpg?s=612x612&w=0&k=20&c=HV0Wd3tbk42-qsGVCxFvhoJKr8KDmm-ihE1CrEB2oHo="
             width="200px" height="100px">
+          </a>
         </div>
       </div>
     </div>
@@ -87,12 +93,14 @@
     <div class="col-md-4" data-aos="zoom-in">
       <div class="me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
         <div class="my-3 p-3">
-          <h5 class="display-5">Juguetes</h5>
+          <h5 class="display-5">Juguetería</h5>
         </div>
         <div style="padding-bottom: 50px">
-          <img
-            src="https://media.istockphoto.com/id/1322274556/es/foto/colecci%C3%B3n-de-diferentes-juguetes-sobre-mesa-de-madera.jpg?s=612x612&w=0&k=20&c=YRmLVRP14HSIBdw7SZcSzvhkoWlT827dGcC3MpS2TIM="
-            width="200px" height="100px">
+          <a href="/home/9">
+            <img
+              src="https://media.istockphoto.com/id/1322274556/es/foto/colecci%C3%B3n-de-diferentes-juguetes-sobre-mesa-de-madera.jpg?s=612x612&w=0&k=20&c=YRmLVRP14HSIBdw7SZcSzvhkoWlT827dGcC3MpS2TIM="
+              width="200px" height="100px">
+          </a>
         </div>
       </div>
     </div>
@@ -103,9 +111,11 @@
           <h2 class="display-5">Mascotas</h2>
         </div>
         <div style="padding-bottom: 50px">
-          <img
-            src="https://media.istockphoto.com/id/1310331783/es/foto/amigos-esponjosos-un-perro-corgi-y-un-gato-tabby-sentarse-juntos-en-un-prado-de-primavera.jpg?s=612x612&w=0&k=20&c=rYr5ibc7Swp3Hdg83lungT_oyVHh6Qk0EJSD0wizrBc="
-            width="200px" height="100px">
+          <a href="/home/10">
+            <img
+              src="https://media.istockphoto.com/id/1310331783/es/foto/amigos-esponjosos-un-perro-corgi-y-un-gato-tabby-sentarse-juntos-en-un-prado-de-primavera.jpg?s=612x612&w=0&k=20&c=rYr5ibc7Swp3Hdg83lungT_oyVHh6Qk0EJSD0wizrBc="
+              width="200px" height="100px">
+          </a>
         </div>
       </div>
     </div>

@@ -26,14 +26,17 @@
         </div>
     @endif
     <div style="margin-top: 5%; margin-bottom: 5%">
-        <h1></h1>
     </div>
+    
+    <h1 style="padding-bottom: 40px;">{{$category_name[0]->name}}</h1>
+    <hr style="padding: 10px">
+
     <div class="row">
         @foreach ($products as $product)
 
-        <div class="col-md-4" style="padding-bottom:30px " data-aos="zoom-in-up">
+        <div class="col-md-3" style="padding-bottom:30px " data-aos="zoom-in-up">
             <div class="card">
-                <img src="{{ asset('storage').'/'.$product->image }}" class="card-img-top" width="600px" height="300px">
+                <img src="{{ asset('storage').'/'.$product->image }}" class="card-img-top" width="600px" height="200px">
                 <div class="card-body">
                     <h2 style="font-size: 24px" class="card-title">{{$product->name}}</h2>
                     <p style="font-size: 18px">{{$product->description}}</p>

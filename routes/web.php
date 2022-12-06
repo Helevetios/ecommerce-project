@@ -45,7 +45,7 @@ Route::get('/logout',[LogoutController::class,'logout'])->name('logout');
 
 
 #Admin Routes
-Route::prefix('admin')->middleware('auth')->group(function(){
+Route::prefix('admin')->middleware(['auth','verifAdmin'])->group(function(){
     Route::get('/',[AdminController::class,'index'])->name('admin');
     #categories
     Route::get('/categories',[AdminController::class,'categories'])->name('categories');
