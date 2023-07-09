@@ -25,29 +25,29 @@
                     </li>
                     @yield('link')
                     @auth
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home.car') }}">Carrito</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('home.history') }}">Historial de compras</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('user') }}">Usuario</a>
-                    </li>
-                    @if (auth()->user()->role == '1')
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('admin') }}">Administrar Sitio</a>
-                    </li>
-                    @endif
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('logout') }}">Cerrar Sesion</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('home.cart') }}">Carrito</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('home.history') }}">Historial de compras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('user') }}">Usuario</a>
+                        </li>
+                        @if (auth()->user()->role == '1')
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('admin') }}">Administrar Sitio</a>
+                            </li>
+                        @endif
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logout') }}">Cerrar Sesion</a>
+                        </li>
                     @endauth
 
                     @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Iniciar Sesión</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">Iniciar Sesión</a>
+                        </li>
                     @endguest
                 </ul>
                 <form class="d-flex" method="POST" action="{{ route('search') }}">

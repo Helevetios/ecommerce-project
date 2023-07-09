@@ -5,7 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\CarController;
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,19 +19,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('register', [RegisterController::class, 'show']);
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
 Route::get('login', [LoginController::class, 'show'])->name('login.show');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::get('/product/{id}', [HomeController::class, 'viewProduct'])->name('viewProduct');
 
-#Car Routes
-Route::get('/home/car', [CarController::class, 'index'])->name('home.car')->middleware('auth');
-Route::post('/home/car/{productId}', [CarController::class, 'store'])->name('home.car.store')->middleware('auth');
-Route::post('/home/delete/{carId}', [CarController::class, 'destroy'])->name('home.car.destroy')->middleware('auth');
-Route::post('home/buy', [CarController::class, 'buy'])->name('home.buy')->middleware('auth');
+#Cart Routes
+Route::get('/home/cart', [CartController::class, 'index'])->name('home.cart')->middleware('auth');
+Route::post('/home/cart/{productId}', [CartController::class, 'store'])->name('home.cart.store')->middleware('auth');
+Route::post('/home/delete/{cartId}', [CartController::class, 'destroy'])->name('home.cart.destroy')->middleware('auth');
+Route::post('home/buy', [CartController::class, 'buy'])->name('home.buy')->middleware('auth');
 
 #User Routes
 Route::get('/home', [HomeController::class, 'index'])->name('home');

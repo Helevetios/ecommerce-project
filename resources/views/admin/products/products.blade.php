@@ -88,10 +88,15 @@
 
                     <div class="form-group">
                         <label for="description">Descripción</label>
-                        <textarea name="description" cols="30" rows="10" style="resize: none" class="form-control"></textarea>
+                        <textarea name="description" rows="3" style="resize: none" class="form-control"></textarea>
                     </div>
 
                     <div class="form-group">
+                        <label for="about">Acerca de</label>
+                        <textarea name="about" rows="6" style="resize: none" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group mb-2">
                         <label for="price">Precio</label>
                         <input type="number" name="price" class="form-control" step="0.01" min="1">
                     </div>
