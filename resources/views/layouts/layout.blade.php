@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mis Peques | @yield('title')</title>
+    <title>iShop | @yield('title')</title>
     <link rel="stylesheet" href="{{ asset('assests/css/bootstrap.min.css') }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
@@ -13,7 +13,7 @@
 <body class="small">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary" style="text-size-adjust: 10px">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('home') }}">Mis Peques</a>
+            <a class="navbar-brand" href="{{ route('home') }}">iShop</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
