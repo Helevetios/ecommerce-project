@@ -36,6 +36,7 @@
                             <th>Nombre</th>
                             <th>Cantidad</th>
                             <th>Total</th>
+                            <th>Editar</th>
                             <th>Eliminar</th>
                         </tr>
                     </thead>
@@ -46,6 +47,10 @@
                                 <td>{{ $cart->cant }}</td>
                                 <td>{{ $cart->total }}</td>
                                 <td>
+                                    <button class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#modal-update-cart-{{ $cart->id }}">Editar</button>
+                                </td>
+                                <td>
                                     <form action="{{ route('home.cart.destroy', [$cart->id]) }}" method="post">
                                         @csrf
                                         <button class="btn btn-danger"
@@ -53,6 +58,7 @@
                                     </form>
                                 </td>
                             </tr>
+                            @include('home.cartUpdated')
                         @endforeach
                     </tbody>
                 </table>
@@ -61,7 +67,7 @@
         @if (!$carts->items() == null)
             <form action="{{ route('home.buy') }}" method="post">
                 @csrf
-                <button class="btn btn-secondary" onclick="return confirm('¿Desea continuar?')">Comprar</button>
+                <button class="btn btn-primary" onclick="return confirm('¿Desea continuar?')">Comprar</button>
             </form>
         @else
             <h5 class="text-center">Carrito Vacio</h5>

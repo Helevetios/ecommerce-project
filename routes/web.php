@@ -33,6 +33,7 @@ Route::get('/home/cart', [CartController::class, 'index'])->name('home.cart')->m
 Route::post('/home/cart/{productId}', [CartController::class, 'store'])->name('home.cart.store')->middleware('auth');
 Route::post('/home/delete/{cartId}', [CartController::class, 'destroy'])->name('home.cart.destroy')->middleware('auth');
 Route::post('home/buy', [CartController::class, 'buy'])->name('home.buy')->middleware('auth');
+Route::post('home/{id}/cart', [HomeController::class, 'updateCart'])->name('updateCart')->middleware('auth');
 
 #User Routes
 Route::get('/home', [HomeController::class, 'index'])->name('home');
@@ -58,10 +59,6 @@ Route::prefix('admin')->middleware(['auth', 'verifAdmin'])->group(function () {
     Route::post('/products/store', [AdminController::class, 'productsStore'])->name('products.store');
     Route::post('/products/delete/{productId}', [AdminController::class, 'productsDelete'])->name('products.delete');
     Route::post('/products/update/{productId}', [AdminController::class, 'productsUpdate'])->name('products.update');
-    #stock
-    Route::get('/stock', [AdminController::class, 'stockIndex'])->name('admin.stocks');
-    Route::post('/stock/store', [AdminController::class, 'stockStore'])->name('stocks.store');
-    Route::post('/stock/update/{stockId}', [AdminController::class, 'stockUpdate'])->name('stocks.update');
     #Sales
     Route::get('/sales', [AdminController::class, 'sales'])->name('admin.sales');
 });

@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Purchase;
 use App\Models\Stock;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 use function PHPUnit\Framework\isEmpty;
@@ -89,10 +90,28 @@ class HomeController extends Controller
         $categories = Category::all();
         $cart = Cart::where('product_id', $productItem->id)->get();
         $cartShow = false;
-        if (!empty($cart[0])) {
-            if($cart[0]->user_id == auth()->user()->id)
-            $cartShow = true;
+        if (Auth::check() && !empty($cart[0])) {
+            if ($cart[0]->user_id == auth()->user()->id) {
+                $cartShow = true;
+            }
         }
         return view('home.viewProduct', compact('productItem', 'productRelateds', 'categories', 'cartShow'));
+    }
+
+    public function updateCart(Request $request, $id)
+    {
+        $this->validate($request, [
+            'cant' => 'required'
+        ]);
+
+        if ($request->cant == 0) {
+            return redirect()->back();
+        } else {
+            $cartUpdate = Cart::find($id);
+            $cartUpdate->cant = $request->cant;
+            $cartUpdate->total = $cartUpdate->product->price * $request->cant;
+            $cartUpdate->save();
+            return redirect()->back();
+        }
     }
 }

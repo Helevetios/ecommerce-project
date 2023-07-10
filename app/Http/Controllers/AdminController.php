@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Purchase;
-use App\Models\Stock;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -106,35 +105,6 @@ class AdminController extends Controller
         if (Storage::delete('public/' . $product_delete->image)) {
             Product::destroy($productId);
         }
-        return redirect()->back();
-    }
-
-    public function stockIndex()
-    {
-        $products = Product::all();
-        $stocks = Stock::all();
-
-        return view('admin.stocks.stocks', [
-            'products' => $products,
-            'stocks' => $stocks
-        ]);
-    }
-
-    public function stockStore(Request $request)
-    {
-        $this->validate($request, [
-            'product_id' => 'required',
-            'stock' => 'required'
-        ]);
-        Stock::create($request->all());
-        return redirect()->back();
-    }
-
-    public function stockUpdate(Request $request, $stockId)
-    {
-        $stock = Stock::find($stockId);
-        $stock->stock = $request->stock;
-        $stock->save();
         return redirect()->back();
     }
 
